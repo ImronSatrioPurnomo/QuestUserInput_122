@@ -3,8 +3,10 @@ package com.example.pertemuanlima
 import android.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -47,5 +49,13 @@ fun FormDataDiri(modifier: Modifier
                 textNama = it
             }
         )
+        Row {
+            gender.forEach { item ->
+                row(modifier = Modifier.selectable(
+                    selected = textJK == item,
+                    onClick = {textJK = item}
+                ))
+            }
+        }
     }
 }
