@@ -28,6 +28,9 @@ import androidx.compose.ui.unit.dp
 import java.lang.reflect.Modifier
 
 
+private val Unit.submit: Int
+private val Unit.divider_tipis: Int
+private val Unit.padding_medium: Int
 private val Arrangement.top: Arrangement.Vertical
 
 @Composable
@@ -101,5 +104,15 @@ fun FormDataDiri(modifier: Modifier
         ) {
             Text(text = stringResource(id=R.string.submit))
         }
+
+        HorizontalDivider(
+            modifier = Modifier
+                .padding(bottom = dimensionResource(id = R.dimen.padding_medium),
+                    top = dimensionResource(
+                        id = R.dimen.padding_medium
+                    )),
+            thickness = dimensionResource(id= R.dimen.divider_tipis),
+            color = Color.DarkGray
+        )
     }
 }
